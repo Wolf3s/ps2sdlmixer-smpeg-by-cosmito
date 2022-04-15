@@ -24,7 +24,7 @@
 #include "MPEGaudio.h"
 #include "MPEGstream.h"
 
-MPEGaudio:: MPEGaudio(MPEGstream *stream, bool initSDL) : sdl_audio(initSDL)
+MPEGaudio::MPEGaudio(MPEGstream *stream, bool initSDL) : sdl_audio(initSDL)
 {
     /* Initialize MPEG audio */
     mpeg = stream;
@@ -74,7 +74,7 @@ MPEGaudio:: MPEGaudio(MPEGstream *stream, bool initSDL) : sdl_audio(initSDL)
       timestamp[i] = -1;
 }
 
-MPEGaudio:: ~MPEGaudio()
+MPEGaudio::~MPEGaudio()
 {
 #ifdef THREADED_AUDIO
     /* Stop the decode thread */
@@ -104,7 +104,7 @@ MPEGaudio:: WantedSpec(SDL_AudioSpec *wanted)
         wanted->channels = 1;
     }
     wanted->samples = 4096;
-    wanted->callback = Play_MPEGaudioSDL;
+    //wanted->callback = Play_MPEGaudioSDL;
     wanted->userdata = this;
     return true;
 }
