@@ -18,4 +18,4 @@ jobs:
         apk add build-base git bash cmake
     - name: Compile project
       run: |
-        make install && cd/src/smpeg && make install
+        make install && cd src/smpeg && make install
